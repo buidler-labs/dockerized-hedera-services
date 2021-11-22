@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+  node_0:
+    ports:
+      - 50220:50211
+  node_1:
+    ports:
+      - 50221:50211
+  node_2:
+    ports:
+      - 50222:50211

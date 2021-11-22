@@ -1,0 +1,46 @@
+version: "3.3"
+
+services:
+  node_0:
+    container_name: node_0
+    image: ${REGISTRY_PREFIX}services-node:${TAG}
+    depends_on:
+      - postgres
+    environment:
+      - NODE_ID=0
+    volumes:
+      - "./config:/opt/hedera/services/config-mount"
+      - "./compose-network/node0/saved:/opt/hedera/services/data/saved"
+      - "./compose-network/node0/output:/opt/hedera/services/output"
+  node_1:
+    container_name: node_1
+    image: ${REGISTRY_PREFIX}services-node:${TAG}
+    depends_on:
+      - postgres
+    environment:
+      - NODE_ID=1
+    volumes:
+      - "./config:/opt/hedera/services/config-mount"
+      - "./compose-network/node1/saved:/opt/hedera/services/data/saved"
+      - "./compose-network/node1/output:/opt/hedera/services/output"
+  node_2:
+    container_name: node_2
+    image: ${REGISTRY_PREFIX}services-node:${TAG}
+    depends_on:
+      - postgres
+    environment:
+      - NODE_ID=2
+    volumes:
+      - "./config:/opt/hedera/services/config-mount"
+      - "./compose-network/node2/saved:/opt/hedera/services/data/saved"
+      - "./compose-network/node2/output:/opt/hedera/services/output"
+  postgres:
+    container_name: hedera-postgres
+    image: postgres:10.9-alpine
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=swirlds
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - "./compose-network/pgdata:/var/lib/postgresql/data/pgdata"
+      - "./config/init.db:/docker-entrypoint-initdb.d"

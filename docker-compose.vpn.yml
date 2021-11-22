@@ -1,0 +1,26 @@
+version: "3.3"
+
+services:
+  node_0:
+    networks:
+      hedera_db:
+      vpn2:
+        ipv4_address: 10.11.0.22
+  node_1:
+    networks:
+      hedera_db:
+      vpn2:
+        ipv4_address: 10.11.0.23
+  node_2:
+    networks:
+      hedera_db:
+      vpn2:
+        ipv4_address: 10.11.0.24
+  postgres:
+    networks:
+      - hedera_db
+
+networks:
+  hedera_db:
+  vpn2:
+    external: true
