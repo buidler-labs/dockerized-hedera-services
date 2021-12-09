@@ -6,7 +6,5 @@ Speaking of the `.env` file, a `.env.sample` file is included and can be used as
 
 `Note`: this setup has been stripped bare from the [original `hedera-services` repo](https://github.com/hashgraph/hedera-services) and should be kept updated as seen fit. The best time to build/update this repo would be when a [new stable tag is released upstream](https://github.com/hashgraph/hedera-services/tags).
 
-### Deployment flavours
-There are currently 2 docker-compose deployment flavours: 
-* a local one, triggered via `docker-compose up` which makes the 3 nodes accessible locally at ports `50220`, `50221` and `50222`
-* a VPN one ment for the 3Vs VPN ecosystem triggered via `docker-compose -f docker-compose.yml -f docker-compose.vpn.yml up` which ties all the 3 nodes to an external `vpn2` network and assigns the following static ip addresses for easy reference: `10.11.0.22`, `10.11.0.23` and `10.11.0.24`. The service port is, in this case, the native `50211`
+### Deployment
+Simply doing a `docker-compose up` makes the 3 nodes accessible locally (eg `localhost`) at ports `50220`, `50221` and `50222`.
