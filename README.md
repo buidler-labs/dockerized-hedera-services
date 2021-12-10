@@ -2,7 +2,7 @@
 
 #### The TL;DR
 ```
-git clone https://github.com/three-Vs/local-hedera-nodes.git
+git clone https://github.com/three-Vs/dockerized-hedera-services.git
 docker-compose up
 ```
 
