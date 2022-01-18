@@ -2,7 +2,7 @@
 
 #### The TL;DR
 ```
-git clone https://github.com/three-Vs/local-hedera-nodes.git
+git clone https://github.com/three-Vs/dockerized-hedera-services.git
 docker-compose up
 ```
 
@@ -10,12 +10,12 @@ This repo provides the minimum required services to deploy a hedera network and 
 
 Speaking of the `.env` file, a `.env.sample` file is included and can be used as a template to create the `.env` file.
 
-If the `.env` file is not provided, the stack defaults to targeting the latest available [hedera-services release tag](https://github.com/hashgraph/hedera-services/releases/)
+If the `.env` file is not provided, the stack defaults to targeting the latest available [hedera-services release tag](https://github.com/hashgraph/hedera-services/releases/).
 
 `Note`: this setup has been stripped bare from the [original `hedera-services` repo](https://github.com/hashgraph/hedera-services) and should be kept updated as seen fit. The best time to build/update this repo would be when a [new stable tag is released upstream](https://github.com/hashgraph/hedera-services/tags).
 
 ### Deployment
-Simply doing a `docker-compose up` makes the 3 nodes accessible locally (eg `localhost`) at ports `50211`, `50212` and `50213`.
+Simply doing a `docker-compose up` makes the 3 nodes accessible locally (eg `localhost`) at ports `50211`, `50212` and `50213`. The stack makes use of [this public docker-hub image](https://hub.docker.com/r/buidlerlabs/hedera-services).
 
 ### Making use of it
 Just fire up your [SDK client of choice](https://docs.hedera.com/guides/docs/sdks) and configure it to use the network like so:
