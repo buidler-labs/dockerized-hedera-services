@@ -4,9 +4,9 @@ services:
   node_0:
     ports:
       - 50211:50211
-  node_1:
-    ports:
-      - 50212:50211
-  node_2:
-    ports:
-      - 50213:50211
+  # node_1:
+  #   ports:
+  #     - 50212:50211
+  # node_2:
+  #   ports:
+  #     - 50213:50211

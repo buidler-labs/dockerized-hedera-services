@@ -2,7 +2,7 @@
 set -e
 
 SCRATCH='/tmp/cmds.sql'
-for DB_NUM in 0 1 2; do
+for DB_NUM in 0; do
   echo "CREATE DATABASE fcfs${DB_NUM} ;" > $SCRATCH
   echo "GRANT ALL PRIVILEGES ON DATABASE fcfs${DB_NUM} TO swirlds ;" >> $SCRATCH
 

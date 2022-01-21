@@ -2,6 +2,7 @@ dbBackup.active,                               0
 dbConnection.host,                             hedera-postgres
 dbConnection.schema,                           fcfsNODE_ID
 checkSignedStateFromDisk,                      1
+csvOutputFolder,                               data/stats
 csvFileName,                                   MainNetStats
 dbBackup.active,                               1
 dbConnection.active,                           1
@@ -9,7 +10,7 @@ dbRestore.active,                              1
 doUpnp,                                        false
 maxOutgoingSyncs,                              1
 reconnect.active,                              1
-reconnect.asyncInputStreamTimeoutMilliseconds, 60000
+reconnect.asyncStreamTimeoutMilliseconds,      60000
 reconnect.reconnectWindowSeconds,              -1
 showDbStats,                                   0
 showInternalStats,                             1
